@@ -50,13 +50,13 @@ A minimal, production-leaning proof-of-concept that:
 
 # Innovate Inc. – Cloud Infrastructure Overview
 
-## 📌 Overview
+##  Overview
 Innovate Inc. is launching a **React SPA + Python/Flask REST API** web application with a **PostgreSQL** backend.  
 This design outlines a **secure, scalable, and cost-effective AWS architecture** leveraging **Amazon EKS** for managed Kubernetes and following cloud and DevOps best practices.
 
 ---
 
-## 🌐 Cloud Environment
+##  Cloud Environment
 - **AWS Organizations** with separate accounts for:
   - `shared-services` – CI/CD, centralized ECR, logging
   - `dev` – development workloads
@@ -67,7 +67,7 @@ This design outlines a **secure, scalable, and cost-effective AWS architecture**
 
 ---
 
-## 🏗 Network Design
+##  Network Design
 - **Dedicated VPC** per environment with **3× AZs**
 - **Subnet tiers**:
   - **Public** – ALB, NAT Gateways
@@ -80,7 +80,7 @@ This design outlines a **secure, scalable, and cost-effective AWS architecture**
 
 ---
 
-## ⚙️ Compute Platform (EKS + Karpenter)
+##  Compute Platform (EKS + Karpenter)
 - **Amazon EKS** with namespaces per service
 - **Ingress** via AWS Load Balancer Controller (ALB)
 - **Karpenter** for just-in-time autoscaling:
@@ -93,7 +93,7 @@ This design outlines a **secure, scalable, and cost-effective AWS architecture**
 
 ---
 
-## 🗄 Database (Aurora PostgreSQL Serverless v2)
+##  Database (Aurora PostgreSQL Serverless v2)
 - **Multi-AZ** for high availability
 - **Elastic scaling** to handle traffic bursts
 - **Backups & DR**:
@@ -103,7 +103,7 @@ This design outlines a **secure, scalable, and cost-effective AWS architecture**
 
 ---
 
-## 🚀 CI/CD Workflow
+##  CI/CD Workflow
 - **GitHub Actions** for build/test
 - **Docker image push** to ECR
 - **Argo CD (GitOps)** for automated environment sync
@@ -111,7 +111,7 @@ This design outlines a **secure, scalable, and cost-effective AWS architecture**
 
 ---
 
-## 📊 Observability
+##  Observability
 - **Logging**: Fluent Bit → CloudWatch Logs
 - **Metrics**: Prometheus (AMP) + Grafana
 - **Tracing**: AWS Distro for OpenTelemetry → X-Ray
@@ -119,7 +119,7 @@ This design outlines a **secure, scalable, and cost-effective AWS architecture**
 
 ---
 
-## 🔐 Security Highlights
+##  Security Highlights
 - TLS 1.2+ everywhere
 - AWS WAF + OWASP rule sets
 - GuardDuty, Security Hub, CloudTrail org trails
@@ -128,14 +128,14 @@ This design outlines a **secure, scalable, and cost-effective AWS architecture**
 
 ---
 
-## 📈 Scalability Approach
+##  Scalability Approach
 - Minimal static nodes for system add-ons
 - On-demand Karpenter nodes for application workloads
 - Aurora PostgreSQL auto-scaling with low capacity floor
 
 ---
 
-## 🖼 High-Level Diagram
+##  High-Level Diagram
 ```mermaid
 flowchart LR
   user((Users)) --> r53[Route 53] --> cf[CloudFront + WAF] --> alb[ALB] --> eks[EKS Cluster]
