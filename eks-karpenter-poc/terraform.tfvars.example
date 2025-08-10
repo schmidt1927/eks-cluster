@@ -1,0 +1,8 @@
+project       = "acme"
+environment   = "dev"
+region        = "us-east-2"
+az_count      = 2
+k8s_version   = "1.30"
+cidr_block    = "10.50.0.0/16"
+public_subnets  = ["10.50.0.0/20", "10.50.16.0/20"]
+private_subnets = ["10.50.32.0/20", "10.50.48.0/20"]

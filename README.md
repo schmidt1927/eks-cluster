@@ -1,2 +1,0 @@
-# eks-cluster
-technical task
